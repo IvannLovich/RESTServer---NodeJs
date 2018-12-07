@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
+const colors = require('colors');
+
 const bodyParser = require('body-parser');
 
 
@@ -22,12 +24,12 @@ mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
 
     if (err) throw err;
 
-    console.log('Base de datos ONLINE...');
+    console.log('Data Base ONLINE'.inverse);
     
 });
 
 
  
 app.listen(process.env.PORT, () => {
-    console.log('Escuchando el puerto: ', process.env.PORT);
+    console.log(colors.green('Listening on port', process.env.PORT, '...'));
 });
