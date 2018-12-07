@@ -6,7 +6,7 @@ let Schema = mongoose.Schema;
 
 
 
-// Valores aceptados para el campo "Role" y mensaje de validación
+// Accepted values for the "Role" field and validation message
 
 let usuariosValidos = {
     values: ['ADMIN_ROLE', 'USER_ROLE'],
@@ -51,7 +51,7 @@ let usuarioSchema = new Schema({
 });
 
 
-// Plugin para que el mensaje de validación se pueda personalizar
+// Plugin for customize the validation message 
 
 usuarioSchema.plugin( uniqueValidator, {message: '{PATH} debe ser único'});
 

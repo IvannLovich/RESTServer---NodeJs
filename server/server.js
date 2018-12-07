@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(require('./rutas/servicios'));
 
 
-// Conexión de Mongoose con Mongo
+// Conection of Mongoose with Mongo
 mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
 
     if (err) throw err;

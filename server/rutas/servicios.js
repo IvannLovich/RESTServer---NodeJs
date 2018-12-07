@@ -35,8 +35,6 @@ app.post('/usuario', function (req, res) {
   let us = new Usuario({
     nombre: body.nombre,
     email: body.email,
-
-    // Enriptación del password
     password: bcrypt.hashSync(body.password, 10),
     role: body.role
   });
@@ -66,7 +64,7 @@ app.put('/usuario/:id', function (req, res) {
   let id = req.params.id;
 
   
-  // Función que indica que campos pueden actualizarse
+  // Fields that can be updated
   let body = _.pick(req.body, ['name', 'email', 'img', 'role', 'estado']);
 
   Usuario.findByIdAndUpdate(id, body, {new: true}, (err, persona) => {
